@@ -1,5 +1,6 @@
 "use client";
 import { useEffect, useState } from "react";
+import { GameGuide } from "./game-guide";
 import {
   create,
   transition,
@@ -129,6 +130,7 @@ export default function Home() {
     setS(create(selected, Date.now() >>> 0, easy, stage));
     setTarget(1);
     setFirst(null);
+    setNpc(4);
     setSaved(false);
   }
   function save() {
@@ -322,7 +324,7 @@ export default function Home() {
               </div>
               <span className="large-symbol">{game.icon}</span>
             </div>
-            <p className="rules">{game.rule}</p>
+            <GameGuide kind={game.id} state={s} target={target} first={first} />
             {!s ? (
               <div className="intro">
                 <div className="intro-icons">
@@ -418,7 +420,9 @@ export default function Home() {
                     {s.kind === "element" && (
                       <div className="secret-banner">
                         あなたの属性：
-                        {["🔥 炎", "💧 水", "⚡ 雷", "🍃 風"][s.roles[0]]} ／{" "}
+                        {
+                          ["🔥 炎", "💧 水", "⚡ 雷", "🍃 風"][s.roles[0]]
+                        } ／{" "}
                         {s.linked
                           ? "合体技 解放済み！"
                           : "仲間と合流して共鳴しよう"}

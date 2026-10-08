@@ -1173,3 +1173,145 @@ select {
     transition: none !important;
   }
 }
+
+/* The mock prioritizes understanding the rules over decorative presentation. */
+.game-guide {
+  margin: 22px 0;
+  background: #1a2030;
+  border: 1px solid #ffffff25;
+  border-radius: 14px;
+  padding: 24px;
+  font-size: 14px;
+  line-height: 1.9;
+}
+.guide-title {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 18px;
+}
+.guide-title h2 {
+  font-size: 22px;
+  font-weight: 700;
+  margin: 0;
+}
+.guide-title > span {
+  font-size: 12px;
+  color: #aeb7cc;
+}
+.game-guide h3 {
+  font-size: 16px;
+  color: var(--accent);
+  font-weight: 700;
+  margin: 18px 0 8px;
+}
+.game-guide p {
+  color: #d0d7e5;
+  margin: 6px 0;
+}
+.guide-goal,
+.guide-next {
+  background: color-mix(in srgb, var(--accent) 9%, transparent);
+  border-left: 3px solid var(--accent);
+  padding: 14px 18px;
+  border-radius: 6px;
+}
+.guide-goal strong,
+.guide-next strong {
+  color: var(--accent);
+  font-size: 15px;
+}
+.guide-columns {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+}
+.game-guide ol {
+  list-style: decimal;
+  padding-left: 24px;
+  margin: 8px 0;
+  color: #d0d7e5;
+}
+.game-guide li {
+  padding-left: 4px;
+  margin-bottom: 10px;
+}
+.guide-example {
+  padding: 15px 18px;
+  background: #ffffff06;
+  border-radius: 8px;
+  margin: 18px 0;
+}
+.guide-example strong {
+  color: #e6eaf2;
+}
+.guide-details summary {
+  cursor: pointer;
+  font-weight: 600;
+  padding: 8px 0;
+  color: #e6eaf2;
+}
+.guide-details .table-wrap {
+  margin: 10px 0 15px;
+}
+.guide-details table {
+  white-space: normal;
+  text-align: left;
+  line-height: 1.8;
+  font-size: 13px;
+  min-width: 0;
+}
+.guide-details td,
+.guide-details th {
+  padding: 12px;
+}
+.guide-details th:first-child {
+  width: 21%;
+  color: #e2e8f2;
+}
+.guide-details td:last-child {
+  width: 19%;
+  color: var(--accent);
+}
+.guide-next {
+  margin-top: 20px;
+}
+@media (max-width: 600px) {
+  .game-guide {
+    padding: 17px;
+    font-size: 13px;
+  }
+  .guide-title {
+    display: block;
+  }
+  .guide-title h2 {
+    font-size: 20px;
+  }
+  .guide-title > span {
+    display: block;
+    margin-top: 5px;
+  }
+  .guide-columns {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+  .guide-details table {
+    font-size: 12px;
+  }
+  .guide-details td,
+  .guide-details th {
+    padding: 9px 7px;
+  }
+  .guide-details th:first-child {
+    width: 24%;
+  }
+  .guide-details td:last-child {
+    width: 23%;
+  }
+  .guide-goal,
+  .guide-next,
+  .guide-example {
+    padding: 12px;
+  }
+}
